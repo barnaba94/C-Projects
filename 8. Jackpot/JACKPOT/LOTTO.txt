@@ -1,0 +1,68 @@
+wejscie: ilosc graczy ale nie wiadomo ile dok³adnie,
+	linijka zawiera opis gracza, zawiera ile zak³adów
+
++ trzeba w miare wczytaniach danych realloc dynamiczne tablice 
+
++ tablica graczy realloc co 5 elementów,
+
++ wchodzê do wczytania z pusta tablica
+
++ tablica zakladow, tablica wskaznikow do zakladow, relloc po 3
+
++ PPlay tablica danychmm tab, dla kazdego gracza trzeba zliczac ile ma zakladow
+
++ wsk do tablicy reallokowanej, tab zakl, s¹ tu podpinane zak³ady, 5 z 50 , 2 z 10
+
++ realloc funkcje bibl u¿ywac,
+
++ uwa¿ac na zwalnianie pamieci, podobno skomplikowane,
+
++ na tej strukturze danych bed¹ operacje
+
++ statystyki bêd¹ prawdopodobnie,
+
++ na koncu zwolnienie calej struktury danych
+
+NAZWISKO[20] IMIE[20] PLEC{male,female} DATA ZAKLADU{dzien nalezy do tyg, struktura z dniami tyg(3 litery na dzien), miesiac{jan,feb,...}, dzien w miesiac, rok losowania }
+
++ jakiœ kod SWIFT ( chyba ) obadac !
+
++ 3 TYPY STRUKTURALNE, STRUKTURA DO KONTA SWIFT,
+
++ wydruk, p³ec, nazwa dnia w tyg, 16/Dec/2014 , numer bankowy, pesel
+drukujemy zak³ady jakie postawi³ goœæ,
+
++ lista wynikowa ma byc posortowana
+
++na koñcu Statystyki,
+
+1:ile razy wystapila ... 50
+
+1: ile razy wystapila... 10
+
++ przy sortowaniu bez polskich znaków
+
++ napisaæ swoja funkcj¹ porównuj¹c¹
+
++ int StrCmp(char* s1, char* s2)
+// suche dynamiczne kopie ³añcuchów znakowych,
+// zamieniæ du¿e na ma³e, albo ma³e na du¿e
+// zapamietac wynik porównania int res*=strcmp(char* , char*)
+// zwolnic funkcje
+// return res;
+
++poszukaæ funkcje strlen, strlen, strcmp,
+
+
++tablica dla graczy,
+
+
++typ strukturalny bet, tam bed¹ dwa wsk¹Ÿników, to bedzie tablica struktur, dla ka¿dego gracza 
+
++ def s.h //typy sta³ych
+print.h //interfejs wydruku
+data.h// interfejs modulu wczytywania danych
+
+//modul wczytania danych
+int ReadData(Lottoplayer*** pAllDraws, const char* sfileMame);
+int  Alloc

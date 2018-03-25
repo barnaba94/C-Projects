@@ -1,0 +1,233 @@
+				PRIORYTETOWA KOLEJKA
++kolejka zrobiona na stogu
++malej¹ce ma byæ stogowanie
+
++update trzeba u¿yæ z sortowania stogowanego ale ma uaktulniaæ z do³u
+
++typedef struct{
+	int nKey;
+	int prior;
+}PQItem;
+
++PQ przedrostki do funkcji
+
++ w formie stogu, zrobic to za pomoca tablic
+
++rozmiar kolejki priorytetowej
+
+pQueue // kolejka realizowana w postaci stogu, mo¿na zrobiæ przy pomocy drzewa binarnego, tablica wska¿ników do tych elementow 
+	//talica elementów //tablica struktur PQItem
+int //PQSize //rozmiar kolejki priorytetowej
+PQCurrSize //iloœæ elementów w kolejce
+void PQPrint (PQueue*)//inorder
+void DecreaseKey(PQueue*, int Key, int nPrior); (nPrior<Item.nPrior)
+void IncreaseKey(PQueue*, int Key, int nPrior); (nPrior>Item.nPrior)
+
+void UpdateDown(PQueue*, int l, int p);
+void UpdateUp(PQueue*, int l, int p)
+
+void UpdateUp(PQueue*, int l, int p)
+{
+	if(..)
+	int = p;//zaczynamy od skrajnego prawego
+	int = j=//ojciec
+	//zapamietaj i-ty
+	while(i nie przekroczylo 1 && //jty<zapamietanego i-tego)
+	{
+	//przesunac element z j do i (w dol) (idzie do ojca do syna w dol)
+	//i=j;
+	  j=(i-1)/2; (ojciec)
+	}
+	wstawiamy zapamietany pod ita pozycje i-ty
+
+}
+
+int PQDeQueue(PQueue*)
+{
+	//zwraca wart 0
+//wpisac ost do 0-wego
+//uaktualnic w dol
+}
+void PQEnQueue(PQueue*, int nKey, int nPrior)
+{
+//wstawic na koncu
+//uaktualnic w gore	
+}
+
+Pqueue* PQInit(int);// inicjuje kolejke priorytetow¹ o rozmiarze nSize
+int PQisEmpty(PQUeue);
+void PQEnQueue(PQueue*, int nKey,int nPrior);
+intPQDeQueue(PQueue*);
+void PQRealease(PQueue);
+void PQPrint(PQueue);//inorder
+
+
+//=======================================
+inne struktury dynamiczne u¿ywane praktycznie
+
+
++kolejka dwukierunkowa:
+
+
++kolejka cykliczna (idziesz w kó³ko)
+
+
++drzewo binarne:
+	+las-to zbiór drzew albo ciag drzew
+-drzewo binarnych przeszukiwañ
+
+//drzewo binarne
+typedeff struct tagTreeItem
+{
+int nKey;
+tagTreeItem* pLeft;
+tagTreeItem* pRight;
+}TreeItem;
+
+//preorder (wszystkie rekurencyjnie)
+//void preOrder(TreeItem* ){}
+//inorder
+//postorder
+void preOrder(TreeItem* p)
+{
+	if(p)
+	{
+		visit(p);
+		preOrder(p->pLeft);
+		preOrder(p->pRight);
+	}
+}
+
+//inorder
+inOrder(p->pRight)
+//postOrder
+postOrder(p->pLeft)
+postOrder(p->pRight)
+visit(p)
+
+void visit(TreeItem* p){}
+void FindAndInsert(int x, TreeItem** p)
+{
+	if(!*p) //if(*p == NULL)
+	{
+	*p=(TreeItem*)malloc(sizeof(TreeItem));
+	(*p)->nKey=x;
+		(*)->pLeft=(*)->pRight=NULL;
+}
+else if (x<(*p)->nKey) //napisac prosciej
+FindAndInsert()x,&(*p)->pLeft));
+else if (x>(*p)->nKey)
+FindAndInsert((x,&(*p)->pRight);//prior ( -> ) > prior (&)
+else visit (*p); //jakas operacja na elemencie drzewa
+}
+}
+
+usuwamy drzewo w porzadku pozornym
+
+TreeItem* FreeTree(TreeItem* pRoot)
+{
+if(pRoot)
+{
+	FreeItem(pRoot->pLeft);
+	FreeTree(pRoot-> pRight);
+	free(pRoot); 
+}
+	return NULL;
+}
+
+TreeItem* TreeFinelyBalanced(int n) //ilosc elementow max miedzy lewym a prawym poddrzewwem rozni sie o1
+{
+	int n1=n/2;
+	int= np=n-n1-1;
+	printf(podaj klucz);
+	int x;
+	scanf("%d", &x);
+	TreeItem* p=(TreeItem*)malloc(sizeof(TreeItem);
+	p->nKey=x;
+	p->pLeft=TreeFinelyBalanced(n1);
+	....
+}
+			
+drzewo postorder
+1 3 4 5 7 8 9 //posortowane dane wychodza
+
+JAK BUDOWAC DRZEWO?
+
+//Wirth drzewo dok³adnie wywa¿one //
+
+				GRAFY
+
++ lista incydencji
+
+METODY PRZEGLADANIA GRAFOW
++ WSZERZ
++ WGLAB
+
+void DFS(v)
+{
+visit(v);
+mark[v]=1;//odwiedzony
+while(istnieje nieowiedzony nastepnik p wierzcho³ka v)
+DFS(p);
+}
+
+//wywolania dfs
+main()
+{
+	for(each v z V) mark [v]=0;
+	for(each v z V)
+	if(!mark[v] DFS(v);
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//BFS
+//zbadaj v -> zbadaj nast v -> zbadaj nastepni v ...
+q=NULL;
+visit(v);mark[v]=1;
+enqueue(q,v);
+while (noEmpty(q)) do
+	u=dequeue(q);
+for (each w z L(u) do //L(u) - lista nast w grafie (u,w)
+if(!mark[w])
+mark[2]=1; visit (w);
+enqueue(q,w);
+fi
+od
+
+//Dijstra
+pq=initQ();
+for(each w z L(v) do
+d[w]=MAX; //RAND_MAX
+prev[w]=-1;
+od;
+
+d[v]=0;
+enqueue(pq,v);
+while(!IsEmptyQueue (pq) do
+u-dequeue (pq);
+for(each w z L(u) do //dla kazdego nast v
+if(d[w] > d[u] + odl(u,w);
+d(w)=d[u]+odl(u,w);
+prev[w]=u;
+enqueue(q,w);
+fi
+od
+od
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+//zmienne statyczne w C
+int ff(int x)
+{
+	static z=1;
+	return ++ z +x;
+}
+//zachowuje wartosc funkcji po wyjsciu z niej
+
+
+//zostaje tworzona na poczatku funkcji a na koncu jest niszczona
+static ont x=1; //zmienna globalna ale ntylko na szasiegu pliku
+
+//statyczna moze byc tez funkcja // nie mo¿na jej wywolac z innego pliku

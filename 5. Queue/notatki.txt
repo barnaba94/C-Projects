@@ -1,0 +1,95 @@
+//DYNAMICZNE STRUKTURY DANYCH
+
+
+//kolejka FIFO
+/*
+2 programy na liœcie prostej
+typedef struct tagQItem
+{
+int nKey;
+tagQItem* pNext;
+}QItem;
+
+typedef struct tagQueque{
+QItem* pHead;
+QItem* pTail;
+}Queque;
+
+Queque* QCreate();
+int QEmpty(Queque* q);
+void QEnqueue(Queue* q, int x); //wloz do kolejki
+int QDequeue(Queue* q); //wyrzuc z kolejki
+void QClear(Queue* q);
+void QDel(Queque* q);
+
+3 kolejka tablicowa
+funkcje takie same
+
+Queque* QCreate(int nSize);
+int QEmpty(Queque* q);
+void QEnqueue(Queue* q, int x); //wloz do kolejki
+int QDequeue(Queue* q); //wyrzuc z kolejki
+void QClear(Queue* q);
+void QDel(Queque* q);
+void QRemove (Queue* q);
+
+//kolejka priorytetowa
+z funkcj¹ update
+dokladac element na koniec tablicy i uaktualniac wartosc stogu przesuwajac element tablicy
+uaktualnianie z gory na dol i z dolu do gory
+
+//modul k. prior.
+tyedef struct
+{
+int nKey; //info
+int nPrior; //priorytet elementu w kolejce
+}PQItem;
+
+typedef struct
+{
+//pQueue //kolejka realizowana w postaci stogu, mo¿na zrobiæ przy pomocy drzewa binarnego //tablica elementow powyzszych
+//int //PQSize //rozmiar kolejki priorytetowej
+//PQCurrSize // ilosc elementow w kolejce
+}PQueue;
+
+PQueue* PQInit(int); //inicjuje kolejke priorytetowa o rozmiarze nSize
+int PQisEmpty (PQueue*); // czy kolejka prior jest pusta
+void PQEnQueue(PQueue*,PQItem* );//int nKey, int nPrior //funkcja wkladajaca do kolejki
+PQItem* PQDeQueue(PQueue*); //zwracany jest element o najwyzszym priorytecie
+void PQRelease(PQueue*); //usuwa calkowicie kolejke
+void PQPrint(PQueue*); //inorder
+void DecreaseKey(PQueue*, int nKey, int nPrior); (nPrior < Item.nPrior)
+void IncreaseKey(PQueue*, int nKey, int nPrior); (nPrior > Item.nPrior)
+
+//w implementacji 2 funkcje
+void UpdateDown(PQueue*, int l, int p);
+void UpdateUp(PQueue*, int l, int p);
+
+void UpdateUP(PQueue*, int l, int p)
+{
+if(..)
+int i=p; //zaczynamy od skrajnego prawego
+int j= //ojciec
+//zapamietaj i-ty
+while(i nie przekroczylo 1 && //j-ty < zapamietanego i-tego
+{
+//przesunac element z j do i (w dol) (idzie od ojca do syna w dol)
+//i=j
+//j=(i-1) /2; (ojciec)
+}
+//wstawic zapamietany pod ita pozycje
+}
+
+int PQDeQueue(PQueue*)
+{
+//zwraca z indeksu 0
+//wpisac ostatni do 0-wego
+//uaktualnic w dol
+}
+
+void PQEnQueue(PQueue*, int nKey, int nPrior)
+{
+//wstawic na koncu
+//uaktualnic w gore
+}
+Kacper Pyœniak

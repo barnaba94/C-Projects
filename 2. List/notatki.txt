@@ -1,0 +1,53 @@
+//NOWY PROGRAM
+//PLIK MODU£
+//main tylko testuje
+//prosta lista z g³ow¹
+//lista pusta
+
+ListItem* MakeEmptyList(); //bez parametrów daj¹ca wska¿nik do listy// powstaje jako pusta lista //0,1 Boolean
+int isEmpty(ListItem*);
+int Front();// zwraca wart szczytowego elementu
+void Insert(pAter,x);//wstawia po wsk otrzyman¹ wartoœæ parametru
+void InserFront(x); //push
+void Remove(pAter); //usuwanie, podobnie jak insert, dodaje wsk po ktorym elemencie usunac
+void RemoveFront(); //del
+void FreeList(...); //czysci liste
+ListItem* Find(..., pPrev) //parametr x którego chce znalezc, wyjsciowy, zwraca dwa wskaŸniki
+void DelList(); //usuwa cala liste
+printList(); //drukowanie listy
+
+//u¿ytkownik mo¿e do³aczyc dowolny typ pod elemnt listy
+
+//dodatkowy plik naglowkowy global.h
++ definicja typu T
++ definicja preprocessora, która definiuje stala o naziwe LISTINFO jako typ T
++ oraz naglowek funkcji porównuj¹cej która bêdzie dostarczana przez u¿ytkownika,
+jej implementacja bêdzie dostarczana przez u¿ytkownika
+-------------------
+
+int comp(const void*, const void*); //- gdy pierwszy jest mniejszy od drugiego, 0 gdy takie same,
+1 gdy pierwsszy jest wiêkszy
+
+
+pude³ko który ma wskaŸnik na listinfo oraz nastêpny element
+
++pole nKey w global zrobic
+
+
+/* stare
+typedef ListItem* SimList;
+SimList MakeEmptyList();  //bez parametrów daj¹ca wska¿nik do listy// powstaje jako pusta lista //0,1 Boolean
+SimList Find(..., pPrev); //parametr x którego chce znalezc, wyjsciowy, zwraca dwa wskaŸniki
+int isEmpty(SimList);
+int  Front();// zwraca wart szczytowego elementu
+void Insert(SimList pAter, int x);//wstawia po wsk otrzyman¹ wartoœæ parametru
+void Remove(SimList pAter); //usuwanie, podobnie jak insert, dodaje wsk po ktorym elemencie usunac
+void InsertFront(SimList pHead, int x); //push
+void RemoveFront(SimList pAfter); //del
+void FreeList(); //czysci liste
+void DelList(SimList pAfter); //usuwa cala liste
+void printList(SimList pAfter); //drukowanie listy
+int comp(const void*, const void*);
+*/
+
+
